@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #4F5D75;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yonas.chatfx.ChatController">
+    <SplitPane dividerPositions="0.4848484848484848" focusTraversable="true" style="-fx-background-color: #4F5D75;" VBox.vgrow="ALWAYS">
+        <AnchorPane style="-fx-background-color: #4F5D75;">
+            <Label alignment="CENTER" layoutX="113.0" layoutY="14.0" minWidth="60.0" style="-fx-text-fill: white;" text="Contacts" textAlignment="CENTER">
+                <font>
+                    <Font size="18.0" fx:id="x1" />
+                </font>
+            </Label>
+            <ListView fx:id="contactList" layoutY="141.0" prefHeight="452.0" prefWidth="316.0" style="-fx-background-color: #4F5D75;" stylesheets="@../../../styles/listViewStyle.css" />
+            <Button fx:id="btnAddContact" layoutX="101.0" layoutY="54.0" mnemonicParsing="false" onAction="#addContactButtonOnClick" text="Add Contact" />
+            <Button fx:id="btnAddContact1" layoutX="101.0" layoutY="54.0" mnemonicParsing="false" onAction="#addContactButtonOnClick" style="-fx-background-color: #BFC0C0; -fx-text-fill: #000000;" text="Add Contact" />
+            <Label layoutX="79.0" layoutY="97.0" style="-fx-text-fill: white;" text="You have" />
+            <Label fx:id="pendingMessages" layoutX="132.0" layoutY="97.0" style="-fx-text-fill: white;" text="0" />
+            <Label layoutX="142.0" layoutY="97.0" style="-fx-text-fill: white;" text="new messages" textFill="WHITE" />
+            <ImageView fitHeight="27.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                <Image url="@../../../Raw/account_logout_xxl.png" />
+            </ImageView>
+            <Button fx:id="btnLogout" layoutX="8.0" layoutY="13.0" minWidth="40.0" mnemonicParsing="false" onAction="#logoutButtonOnClick" prefHeight="30.0" prefWidth="40.0" stylesheets="@../../../styles/btnLogoutStyle.css" />
+            <Label fx:id="lblUserId" layoutX="90.0" layoutY="115.0" prefHeight="18.0" prefWidth="104.0" style="-fx-text-fill: white;" text="ID: ">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+        </AnchorPane>
+        <AnchorPane id="Content" style="-fx-background-color: #4F5D75;">
+            <Button fx:id="btnSend" alignment="CENTER_RIGHT" layoutX="570.0" layoutY="516.0" mnemonicParsing="false" onAction="#sendButtonOnClick" style="-fx-background-color: #BFC0C0; -fx-text-fill: #000000;" text="Send" visible="false" />
+            <TextField fx:id="textField" layoutX="70.0" layoutY="516.0" prefHeight="26.0" prefWidth="484.0" style="-fx-background-color: #2D3142; -fx-text-fill: darkgrey;" visible="false" />
+            <ListView fx:id="messageList" layoutY="33.0" prefHeight="470.0" prefWidth="664.0" maxWidth="664.0" style="-fx-background-color: #4F5D75;" stylesheets="@../../../styles/listViewStyle.css" />
+            <CheckBox fx:id="btnBlocked" layoutX="553.0" layoutY="7.0" mnemonicParsing="false" onAction="#blockedButtonOnClick" style="-fx-text-fill: white;" text="Blocked" visible="false" />
+            <Label fx:id="lblContactName" layoutX="8.0" layoutY="-1.0" prefHeight="30.0" prefWidth="303.0" style="-fx-text-fill: white;">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <Label fx:id="lblError" layoutX="14.0" layoutY="552.0" style="-fx-text-fill: white;" text="You cannot send an empty message/Greater than 100 characters" visible="false" />
+        </AnchorPane>
+    </SplitPane>
+</VBox>
