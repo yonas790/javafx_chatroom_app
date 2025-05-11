@@ -9,5 +9,8 @@
         <module name="chatroom_javafx" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ChatFX" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>
